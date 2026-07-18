@@ -1,0 +1,10 @@
+export * from './ui'
+export * from './forms'
+export * from './feedback'
+export * from './data'
+export * from './charts'
+export * from './navigation'
+export * from './layout'
+
+// Re-export i18n for consumers that import from '@/components'
+export { I18nProvider, useI18n, translate, DEFAULT_LOCALE } from '../i18n'

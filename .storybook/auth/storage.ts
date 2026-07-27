@@ -104,6 +104,9 @@ export function isAuthDisabled(): boolean {
 }
 
 export function getApiBaseUrl(): string {
-  const url = readConfig().apiBaseUrl
-  return (url?.replace(/\/$/, '') || 'http://localhost:8000/api/v1').trim()
+  const raw = (readConfig().apiBaseUrl || 'http://localhost:8000/api/v1').trim()
+  const withoutTrailingSlash = raw.replace(/\/$/, '')
+  // Tolerate deploy envs that omit the "/api/v1" prefix (same contract as the admin).
+  if (/\/api(\/|$)/.test(withoutTrailingSlash)) return withoutTrailingSlash
+  return `${withoutTrailingSlash}/api/v1`
 }

@@ -1,9 +1,9 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
-/** DsAvatar: default 40px; fallback surfaceSubtle + primary initials */
+/** DsAvatar: default 40px; fallback primary-50 + primary initials + ring primary */
 const avatarVariants = cva(
-  'relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full bg-surface-subtle font-semibold tracking-wide text-primary-500 ring-1 ring-neutral-900/8',
+  'relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full bg-primary-50 font-semibold tracking-wide text-primary-700 ring-2 ring-primary-500 shadow-[0_2px_8px_rgba(95,51,225,0.16)]',
   {
     variants: {
       size: {

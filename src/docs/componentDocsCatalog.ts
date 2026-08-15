@@ -289,6 +289,12 @@ export const componentDocsPt = {
     guidelines: 'Para dados tabulares, use Table/DataTable.',
     a11y: 'list/listitem nativos ou roles equivalentes.',
   },
+  swipeActions: {
+    lead: 'Ações contextuais reveladas ao arrastar um card para a esquerda.',
+    when: 'Listas densas em que uma ação secundária não cabe no card.',
+    guidelines: 'Painel fechado transparente; ações em botões arredondados individuais. Mantenha ação indisponível visível e disabled. Use content para controles compostos, como Switch.',
+    a11y: 'Cada ação exige rótulo acessível. Não use swipe como única forma de executar uma ação crítica.',
+  },
   tabs: {
     lead: 'Abas de conteúdo no domínio de dados/UI.',
     when: 'Alternar painéis relacionados na mesma página.',
@@ -720,6 +726,12 @@ export const componentDocsEn = {
     when: 'Simple navigation and search results.',
     guidelines: 'For tabular data, use Table/DataTable.',
     a11y: 'Native list/listitem or equivalent roles.',
+  },
+  swipeActions: {
+    lead: 'Contextual actions revealed by swiping a card to the left.',
+    when: 'Dense lists where a secondary action does not fit in the card.',
+    guidelines: 'Keep the closed panel transparent and use individual rounded actions. Keep unavailable actions visible and disabled. Use content for composed controls such as Switch.',
+    a11y: 'Every action needs an accessible label. Do not make swipe the only way to perform a critical action.',
   },
   tabs: {
     lead: 'Content tabs in the data/UI domain.',

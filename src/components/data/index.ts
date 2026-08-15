@@ -35,6 +35,12 @@ export { Tabs, type TabsProps, type TabItem } from './Tabs'
 export { Accordion, type AccordionProps, type AccordionItem } from './Accordion'
 export { Pagination, type PaginationProps } from './Pagination'
 export { List, ListItem, type ListItemProps } from './List'
+export {
+  SwipeActions,
+  type SwipeActionsProps,
+  type SwipeAction,
+  type SwipeActionTone,
+} from './SwipeActions'
 export { Timeline, type TimelineProps, type TimelineItem } from './Timeline'
 export { Metric, type MetricProps } from './Metric'
 export {

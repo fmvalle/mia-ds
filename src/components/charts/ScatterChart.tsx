@@ -1,6 +1,5 @@
 import {
   CartesianGrid,
-  ResponsiveContainer,
   Scatter,
   ScatterChart as RechartsScatterChart,
   Tooltip,
@@ -8,6 +7,7 @@ import {
   YAxis,
   ZAxis,
 } from 'recharts'
+import { ChartResponsiveContainer } from './ChartResponsiveContainer'
 import { chartPalette, chartTheme } from './theme'
 
 export type ScatterPoint = {
@@ -37,7 +37,7 @@ export function ScatterChart({
   }
 
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ChartResponsiveContainer>
       <RechartsScatterChart margin={{ top: 8, right: 16, bottom: 8, left: 8 }}>
         <CartesianGrid stroke={chartTheme.gridStroke} strokeDasharray="3 3" />
         <XAxis
@@ -70,6 +70,6 @@ export function ScatterChart({
         />
         <Scatter data={data} fill={chartPalette[0]} />
       </RechartsScatterChart>
-    </ResponsiveContainer>
+    </ChartResponsiveContainer>
   )
 }

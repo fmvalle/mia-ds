@@ -3,11 +3,11 @@ import {
   BarChart as RechartsBarChart,
   CartesianGrid,
   Cell,
-  ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
 } from 'recharts'
+import { ChartResponsiveContainer } from './ChartResponsiveContainer'
 import { chartPalette, chartTheme, chartColors, defaultChartMargin } from './theme'
 
 export type BarChartPoint = {
@@ -42,7 +42,7 @@ export function BarChart({
 
   if (layout === 'horizontal') {
     return (
-      <ResponsiveContainer width="100%" height="100%">
+      <ChartResponsiveContainer>
         <RechartsBarChart
           data={chartData}
           layout="vertical"
@@ -77,14 +77,14 @@ export function BarChart({
             ))}
           </Bar>
         </RechartsBarChart>
-      </ResponsiveContainer>
+      </ChartResponsiveContainer>
     )
   }
 
   const angled = xTickAngle !== 0
 
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ChartResponsiveContainer>
       <RechartsBarChart
         data={chartData}
         margin={{
@@ -125,7 +125,7 @@ export function BarChart({
           ))}
         </Bar>
       </RechartsBarChart>
-    </ResponsiveContainer>
+    </ChartResponsiveContainer>
   )
 }
 

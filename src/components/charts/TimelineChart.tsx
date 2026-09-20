@@ -1,13 +1,6 @@
 import { useId } from 'react'
-import {
-  Area,
-  AreaChart,
-  CartesianGrid,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from 'recharts'
+import { Area, AreaChart, CartesianGrid, Tooltip, XAxis, YAxis } from 'recharts'
+import { ChartResponsiveContainer } from './ChartResponsiveContainer'
 import { chartPalette, chartTheme, chartColors, defaultChartMargin } from './theme'
 
 export type TimelinePoint = {
@@ -36,7 +29,7 @@ export function TimelineChart({
   }
 
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ChartResponsiveContainer>
       <AreaChart data={data} margin={defaultChartMargin}>
         <defs>
           <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
@@ -74,6 +67,6 @@ export function TimelineChart({
           activeDot={{ r: 5, fill: color, stroke: chartColors.neutral[50], strokeWidth: 2 }}
         />
       </AreaChart>
-    </ResponsiveContainer>
+    </ChartResponsiveContainer>
   )
 }

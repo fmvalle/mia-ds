@@ -24,7 +24,7 @@ export function ChartCard({
         {description ? <CardDescription className="text-sm">{description}</CardDescription> : null}
       </CardHeader>
       <CardContent className="flex-1 pt-4">
-        <div className="w-full" style={{ height }}>
+        <div className="w-full min-w-0" style={{ height }}>
           {children}
         </div>
       </CardContent>

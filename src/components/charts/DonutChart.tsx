@@ -1,4 +1,5 @@
-import { Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts'
+import { Cell, Legend, Pie, PieChart, Tooltip } from 'recharts'
+import { ChartResponsiveContainer } from './ChartResponsiveContainer'
 import { chartPalette, chartTheme, chartColors } from './theme'
 
 export type DonutChartPoint = {
@@ -25,7 +26,7 @@ export function DonutChart({
   }
 
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ChartResponsiveContainer>
       <PieChart>
         <Pie
           data={data}
@@ -49,6 +50,6 @@ export function DonutChart({
         />
         {showLegend ? <Legend /> : null}
       </PieChart>
-    </ResponsiveContainer>
+    </ChartResponsiveContainer>
   )
 }

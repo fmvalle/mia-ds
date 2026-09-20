@@ -6,6 +6,9 @@ export {
   pedagogicalStatusColors,
 } from './theme'
 export { ChartCard, type ChartCardProps } from './ChartCard'
+export {
+  ChartResponsiveContainer,
+} from './ChartResponsiveContainer'
 export { TimelineChart, type TimelineChartProps, type TimelinePoint } from './TimelineChart'
 export {
   BarChart,

@@ -46,12 +46,13 @@ export function BarChart({
         <RechartsBarChart
           data={chartData}
           layout="vertical"
-          margin={{ ...defaultChartMargin, left: 8, right: 16, bottom: 8 }}
+          margin={{ ...defaultChartMargin, left: 4, right: 24, bottom: 8 }}
         >
           <CartesianGrid stroke={chartTheme.gridStroke} strokeDasharray="3 3" horizontal={false} />
           <XAxis
             type="number"
             allowDecimals={false}
+            domain={[0, 'auto']}
             tick={{ fill: chartTheme.textColor, fontSize: chartTheme.fontSize }}
             axisLine={false}
             tickLine={false}
@@ -59,14 +60,18 @@ export function BarChart({
           <YAxis
             type="category"
             dataKey="name"
-            width={120}
-            tick={{ fill: chartColors.neutral[700], fontSize: 11 }}
+            width={152}
+            tick={{ fill: chartColors.neutral[700], fontSize: 12 }}
             axisLine={false}
             tickLine={false}
+            tickFormatter={(value: string) =>
+              value.length > 30 ? `${value.slice(0, 29)}…` : value
+            }
           />
           <Tooltip
             contentStyle={chartTheme.tooltipStyle}
             formatter={(value) => [`${value}`, valueLabel]}
+            labelFormatter={(label) => String(label)}
           />
           <Bar dataKey="value" radius={[0, 8, 8, 0]} maxBarSize={28}>
             {chartData.map((entry, index) => (

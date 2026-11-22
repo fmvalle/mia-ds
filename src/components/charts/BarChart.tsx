@@ -52,7 +52,7 @@ export function BarChart({
           <XAxis
             type="number"
             allowDecimals={false}
-            domain={[0, 'auto']}
+            domain={[0, 'dataMax']}
             tick={{ fill: chartTheme.textColor, fontSize: chartTheme.fontSize }}
             axisLine={false}
             tickLine={false}
@@ -73,7 +73,7 @@ export function BarChart({
             formatter={(value) => [`${value}`, valueLabel]}
             labelFormatter={(label) => String(label)}
           />
-          <Bar dataKey="value" radius={[0, 8, 8, 0]} maxBarSize={28}>
+          <Bar dataKey="value" radius={[0, 8, 8, 0]} maxBarSize={28} isAnimationActive={false}>
             {chartData.map((entry, index) => (
               <Cell
                 key={entry.name}
